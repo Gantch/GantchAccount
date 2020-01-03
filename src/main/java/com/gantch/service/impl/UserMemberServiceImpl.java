@@ -1,6 +1,8 @@
 package com.gantch.service.impl;
 
 import com.gantch.common.CommonResult;
+import com.gantch.mapper.UserMemberMapper;
+import com.gantch.pojo.UserMember;
 import com.gantch.service.RedisService;
 import com.gantch.service.UserMemberService;
 import com.gantch.utils.JwtTokenUtil;
@@ -8,9 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
+import java.sql.Timestamp;
 
 /**
  * @author lcw332
@@ -27,6 +32,10 @@ public class UserMemberServiceImpl implements UserMemberService {
     private JwtTokenUtil jwtTokenUtil;
 
     @Autowired
+    private UserMemberMapper memberMapper;
+
+
+    @Autowired
     private RedisService redisService;
     @Value("${redis.key.prefix.authCode}")
     private String REDIS_KEY_PREFIX_AUTH_CODE;
@@ -39,8 +48,21 @@ public class UserMemberServiceImpl implements UserMemberService {
         if(!verifyAuthCode(authCode,telephone)){
             return CommonResult.failed("验证码错误");
         }
+        //todo 查询是否已有该用户
 
-        return null;
+        //没有该用户进行添加操作
+        UserMember userMember =new UserMember();
+        userMember.setUserName(username);
+        userMember.setPassWord(passwordEncoder.encode(password));
+        userMember.setEmail(null);
+        userMember.setPhone(telephone);
+        userMember.setTenantId(1);
+        userMember.setOpenId(null);
+        userMember.setCreateTime(new Timestamp(System.currentTimeMillis()));
+
+        memberMapper.insert(userMember);
+
+        return CommonResult.success(null,"注册成功");
     }
 
     @Override

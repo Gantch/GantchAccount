@@ -31,12 +31,31 @@ public class UserMemberController {
 
 
     @ApiOperation("用户手机注册")
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public CommonResult register(@RequestParam String username,
+    @RequestMapping(value = "/phoneRegister", method = RequestMethod.POST)
+    public CommonResult phoneRegister(@RequestParam String username,
                                  @RequestParam String password,
                                  @RequestParam String telephone,
                                  @RequestParam String authCode){
 
         return null;
     }
+
+    @ApiOperation("邮箱注册")
+    @RequestMapping(value = "/emailRegister",method = RequestMethod.POST)
+    public CommonResult emailRegister(@RequestParam String username,
+                                      @RequestParam String password,
+                                      @RequestParam String email,
+                                      @RequestParam String authCode){
+        return null;
+    }
+
+    @ApiOperation("微信注册")
+    @RequestMapping(value = "/weChatRegister",method = RequestMethod.POST)
+    public CommonResult weChatRegister(@RequestParam String username,
+                                      @RequestParam String password,
+                                      @RequestParam String openId,
+                                      @RequestParam String authCode){
+        return null;
+    }
+
 }
