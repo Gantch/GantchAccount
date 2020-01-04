@@ -26,7 +26,6 @@ public class AccountSecurityConfig extends SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         //获取登录用户信息
-//        return username -> memberService.loadUserByUsername(username);
-        return null;
+        return username -> memberService.loadUserByUsername(username);
     }
 }

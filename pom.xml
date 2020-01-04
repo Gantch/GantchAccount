@@ -41,7 +41,7 @@
         <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
         <!--        <joda-time.version>2.4</joda-time.version>-->
         <!--        <guava.version>18.0</guava.version> &lt;!&ndash;Guava是一个Google的基于java1.6的类库集合的扩展项目&ndash;&gt;-->
-        <gson.version>2.6.2</gson.version>  <!--Json处理框架-->
+        <gson.version>2.8.5</gson.version>  <!--Json处理框架-->
         <lombok.version>1.16.18</lombok.version>
         <!--        <cassandra.version>3.0.0</cassandra.version>-->
         <!--        <cassandra.version>3.4.0</cassandra.version>-->
@@ -67,6 +67,23 @@
     <!--也不会给子项目引入依赖，只是表示该部分是可被继承的，但不直接被引用。如果需要引用dependencyManagement部分内容，-->
 
     <dependencies>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <!--阿里云短信接口-->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-dyvmsapi</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <!--阿里云语音接口-->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+            <version>1.1.0</version>
+        </dependency>
         <!--redis依赖配置-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -252,7 +269,7 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.6.2</version>
+            <version>${gson.version}</version>
         </dependency>
         <!--        <dependency>-->
         <!--            <groupId>com.google.guava</groupId>-->

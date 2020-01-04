@@ -1,5 +1,5 @@
 server:
-  port: 9081
+  port: 8023
 
 jwt:
   tokenHeader: Authorization #JWT存储的请求头
@@ -15,9 +15,8 @@ secure:
       - /swagger/**
       - /webjars/springfox-swagger-ui/**
       - /**/v2/api-docs
-      - /api/v1/nbiot/admin/login
-      - /api/v1/nbiot/admin/register
-      - /api/v1/nbiot/device/**
+      - /api/v1/mobile/phoneRegister
+      - /api/v1/mobile/phoneLogin
       - /druid/**
       - /actuator/**
       - /**/*.js
@@ -36,3 +35,9 @@ redis:
       authCode: "portal:authCode:"
     expire:
       authCode: 90 # 验证码超期时间
+
+logging:
+  level:
+    root: info
+    com.gantch: debug
+#    file: nbiot_log.log
