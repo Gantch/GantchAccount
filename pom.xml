@@ -58,7 +58,7 @@
         <druid.version>1.1.10</druid.version>
         <commons-lang3.version>3.4</commons-lang3.version>
         <beanutils.version>1.9.3</beanutils.version>
-        <mybatis.version>3.4.6</mybatis.version>
+        <mybatis.version>3.5.6</mybatis.version>
         <mysql-connector.version>8.0.15</mysql-connector.version>
         <io.reactivex.version>1.0.2</io.reactivex.version>
 
