@@ -46,7 +46,7 @@
         <!--        <cassandra.version>3.0.0</cassandra.version>-->
         <!--        <cassandra.version>3.4.0</cassandra.version>-->
         <spring-data-commons.version>2.2.2.RELEASE</spring-data-commons.version>
-        <poi.version>3.17</poi.version>
+        <poi.version>5.2.1</poi.version>
         <pagehelper-starter.version>1.2.10</pagehelper-starter.version>
         <pagehelper.version>5.1.8</pagehelper.version>
         <jjwt.version>0.9.0</jjwt.version>
