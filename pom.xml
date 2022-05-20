@@ -41,7 +41,7 @@
         <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
         <!--        <joda-time.version>2.4</joda-time.version>-->
         <!--        <guava.version>18.0</guava.version> &lt;!&ndash;Guava是一个Google的基于java1.6的类库集合的扩展项目&ndash;&gt;-->
-        <gson.version>2.8.5</gson.version>  <!--Json处理框架-->
+        <gson.version>2.8.9</gson.version>  <!--Json处理框架-->
         <lombok.version>1.16.18</lombok.version>
         <!--        <cassandra.version>3.0.0</cassandra.version>-->
         <!--        <cassandra.version>3.4.0</cassandra.version>-->
